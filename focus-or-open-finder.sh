@@ -3,6 +3,12 @@
 
 osascript <<EOF
 tell application "Finder"
-    activate
+    set finderWindows to windows
+    if (count of finderWindows) is 0 then
+        open home
+        activate
+    else
+        activate
+    end if
 end tell
 EOF
